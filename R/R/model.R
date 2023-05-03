@@ -1054,7 +1054,7 @@ model_refit <- function(x_train, y_train, x_val, y_val, x_test, y_test,
   df.int <- 1
 
   ## Drop intercept if negative and intercept_sign == "non_negative"
-  if (intercept_sign == "non_negative" && coef(mod)[1] < 0) {
+  if (intercept_sign == "non_negative") {
     mod <- glmnet(
       x_train,
       y_train,
